@@ -1,0 +1,23 @@
+From 833de9dc5e34d15a2d92826073f577e6de657923 Mon Sep 17 00:00:00 2001
+From: David Cramer <dcramer@gmail.com>
+Date: Thu, 5 Jul 2018 09:41:32 -0700
+Subject: [PATCH] feat: Enable saml2 SSO by default
+
+Given this is now stable (and launched in production), this makes the feature available by default. This primarily will affect open source users of Sentry.
+---
+ src/sentry/conf/server.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sentry/conf/server.py b/sentry/conf/server.py
+index a3cd3ba02cd..5da348ac5b0 100644
+--- a/sentry/conf/server.py
++++ b/sentry/conf/server.py
+@@ -751,7 +751,7 @@ def create_partitioned_queues(name):
+     'organizations:event-attachments': False,
+     'organizations:repos': True,
+     'organizations:sso': True,
+-    'organizations:sso-saml2': False,
++    'organizations:sso-saml2': True,
+     'organizations:sso-rippling': False,
+     'organizations:group-unmerge': False,
+     'organizations:github-apps': False,
